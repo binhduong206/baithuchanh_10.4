@@ -100,7 +100,10 @@ export default function SignUpScreen({ navigation }) {
       </View>
 
       {/* Sign Up Button */}
-      <TouchableOpacity style={styles.signupButton}>
+      <TouchableOpacity
+        style={styles.signupButton}
+        onPress={() => navigation.navigate("App")}
+      >
         <Text style={styles.signupText}>Sing Up</Text>
       </TouchableOpacity>
 

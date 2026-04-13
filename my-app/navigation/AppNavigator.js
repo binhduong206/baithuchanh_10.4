@@ -8,6 +8,7 @@ import SelectLocationScreen from "../Screens/SelectLocationScreen";
 import LoginScreen from "../Screens/LoginScreen";
 import SignUpScreen from "../Screens/SignUpScreen";
 import ForgotPasswordScreen from "../Screens/ForgotPasswordScreen";
+import AppStack from "./AppStack";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ function AppNavigator() {
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="SignUp" component={SignUpScreen} />
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+      <Stack.Screen name="App" component={AppStack} />
     </Stack.Navigator>
   );
 }
