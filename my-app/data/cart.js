@@ -27,7 +27,6 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  // Các hàm khác (bạn đem từ CartScreen sang đây)
   const increaseQuantity = (id) => {
     setCartItems((prev) =>
       prev.map((item) =>

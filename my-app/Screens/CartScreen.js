@@ -8,9 +8,8 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-// import productData from "../data/data.js"; // ❌ BỎ DÒNG NÀY: Giỏ hàng không lấy toàn bộ data gốc nữa
 
-import { useCart } from "../data/cart.js"; // Đảm bảo đường dẫn đúng tới file CartContext.js của bạn
+import { useCart } from "../data/cart.js";
 
 export default function CartScreen() {
   const { cartItems, increaseQuantity, decreaseQuantity, removeItem } =

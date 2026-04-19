@@ -82,8 +82,8 @@ export default function FilterScreen({ navigation }) {
               selectedCategories,
               selectedBrands,
             };
-            console.log("SEND FILTER:", filters); // 🔥 THÊM
-            route.params?.onApplyFilter(filters); // 🔥 callback
+            console.log("SEND FILTER:", filters);
+            route.params?.onApplyFilter(filters);
             navigation.goBack();
           }}
         >

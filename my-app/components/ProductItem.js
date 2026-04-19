@@ -3,11 +3,10 @@ import { useCart } from "../data/cart.js";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function ProductItem({ product, onPress }) {
-  if (!product) return null; // 🛡️ chặn lỗi
+  if (!product) return null;
 
   const { addToCart } = useCart();
 
-  // SỬA Ở ĐÂY: Không truyền tham số (product) vào hàm này nữa
   const handleAddToCart = () => {
     addToCart(product); // Gọi trực tiếp product từ props
     // Alert.alert("Thành công", `Đã thêm ${product.product_name} vào giỏ!`);

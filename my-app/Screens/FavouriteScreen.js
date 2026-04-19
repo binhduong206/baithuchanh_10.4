@@ -11,9 +11,6 @@ import {
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import products from "../data/data.js";
-// import { useCart } from "./CartContext"; // Bỏ comment dòng này khi bạn muốn tích hợp CartContext
-
-// Dữ liệu mẫu dựa trên hình ảnh của bạn (Bạn có thể thay bằng data thật)
 
 export default function FavouriteScreen() {
   // const { addToCart } = useCart(); // Lấy hàm thêm vào giỏ từ Context

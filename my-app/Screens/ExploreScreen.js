@@ -99,7 +99,7 @@ export default function ExploreScreen({ navigation }) {
           <ScrollView
             contentContainerStyle={styles.scrollContent}
             showsVerticalScrollIndicator={false}
-            keyboardShouldPersistTaps="handled" // 🔥 thêm dòng này
+            keyboardShouldPersistTaps="handled"
           >
             <View style={styles.titleTextContainer}>
               <Text style={styles.titleText}>Find Products</Text>
@@ -117,7 +117,7 @@ export default function ExploreScreen({ navigation }) {
                 placeholderTextColor="#A9AAAA"
               />
 
-              {/* 🔥 Filter icon */}
+              {/* Filter icon */}
               {isFocused && (
                 <TouchableOpacity
                   onPress={() =>
