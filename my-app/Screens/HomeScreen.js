@@ -12,30 +12,30 @@ import {
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import ProductItem from "../components/ProductItem";
-
-const products = [
-  {
-    id: 1,
-    image: require("../assets/img/item/banana.png"),
-    title: "Organic Bananas",
-    description: "7pcs, Priceg",
-    price: "$4.99",
-  },
-  {
-    id: 2,
-    image: require("../assets/img/item/apple.png"),
-    title: "Red Apples",
-    description: "1kg, Priceg",
-    price: "$4.99",
-  },
-  {
-    id: 3,
-    image: require("../assets/img/item/banana.png"),
-    title: "Organic Oranges",
-    description: "8pcs, Priceg",
-    price: "$5.99",
-  },
-];
+import products from "../data/data.js";
+// const products = [
+//   {
+//     id: 1,
+//     image: require("../assets/img/item/banana.png"),
+//     title: "Organic Bananas",
+//     description: "7pcs, Priceg",
+//     price: "$4.99",
+//   },
+//   {
+//     id: 2,
+//     image: require("../assets/img/item/apple.png"),
+//     title: "Red Apples",
+//     description: "1kg, Priceg",
+//     price: "$4.99",
+//   },
+//   {
+//     id: 3,
+//     image: require("../assets/img/item/banana.png"),
+//     title: "Organic Oranges",
+//     description: "8pcs, Priceg",
+//     price: "$5.99",
+//   },
+// ];
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -87,11 +87,10 @@ export default function HomeScreen({ navigation }) {
                 {products.map((product) => (
                   <ProductItem
                     key={product.id}
-                    image={product.image}
-                    title={product.title}
-                    description={product.description}
-                    price={product.price}
-                    onAddPress={() => console.log(`Added ${product.title}`)}
+                    product={product}
+                    onAddPress={() =>
+                      console.log(`Added ${product.product_name}`)
+                    }
                     onPress={() =>
                       navigation.navigate("ProductDetail", { product })
                     }
@@ -118,11 +117,10 @@ export default function HomeScreen({ navigation }) {
                 {products.map((product) => (
                   <ProductItem
                     key={product.id}
-                    image={product.image}
-                    title={product.title}
-                    description={product.description}
-                    price={product.price}
-                    onAddPress={() => console.log(`Added ${product.title}`)}
+                    product={product}
+                    onAddPress={() =>
+                      console.log(`Added ${product.product_name}`)
+                    }
                     onPress={() =>
                       navigation.navigate("ProductDetail", { product })
                     }

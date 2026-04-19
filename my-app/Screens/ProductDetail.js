@@ -19,7 +19,9 @@ export default function ProductDetail({ route, navigation }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const flatListRef = useRef(null);
 
-  const images = product ? [product.image, product.image, product.image] : [];
+  const images = product
+    ? [product.productImgUrl, product.productImgUrl, product.productImgUrl]
+    : [];
 
   const handleScroll = (event) => {
     const contentOffsetX = event.nativeEvent.contentOffset.x;
@@ -81,10 +83,10 @@ export default function ProductDetail({ route, navigation }) {
           <View style={styles.titleContainer}>
             <View>
               <Text style={styles.productName}>
-                {product?.title || "Product"}
+                {product?.product_name || "Product"}
               </Text>
               <Text style={styles.productDesc}>
-                {product?.description || "No description"}
+                {product?.display_label || "No description"}
               </Text>
             </View>
             <TouchableOpacity onPress={() => setIsFavorite(!isFavorite)}>
@@ -113,7 +115,7 @@ export default function ProductDetail({ route, navigation }) {
                 <Text style={styles.quantityButtonText}>+</Text>
               </TouchableOpacity>
             </View>
-            <Text style={styles.price}>{product?.price || "$0.00"}</Text>
+            <Text style={styles.price}>{"$" + product?.price || "$0.00"}</Text>
           </View>
         </View>
 

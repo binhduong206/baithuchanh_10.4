@@ -1,34 +1,38 @@
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { useCart } from "../data/cart.js";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-export default function ProductItem({
-  image,
-  title,
-  description,
-  price,
-  onAddPress,
-  onPress,
-}) {
+export default function ProductItem({ product, onPress }) {
+  if (!product) return null; // 🛡️ chặn lỗi
+
+  const { addToCart } = useCart();
+
+  // SỬA Ở ĐÂY: Không truyền tham số (product) vào hàm này nữa
+  const handleAddToCart = () => {
+    addToCart(product); // Gọi trực tiếp product từ props
+    // Alert.alert("Thành công", `Đã thêm ${product.product_name} vào giỏ!`);
+  };
+
   return (
     <TouchableOpacity style={styles.itemContainer} onPress={onPress}>
       <View style={styles.imageItemContainer}>
-        <Image source={image} style={styles.imageItem} />
+        <Image source={product.productImgUrl} style={styles.imageItem} />
       </View>
 
       <View style={styles.textItemContainer}>
-        <Text style={{ fontSize: 16, fontWeight: 800 }}>{title}</Text>
-        <Text style={{ color: "#7C7C7C" }}>{description}</Text>
+        <Text style={{ fontSize: 16, fontWeight: "800" }}>
+          {product.product_name}
+        </Text>
+        <Text style={{ color: "#7C7C7C" }}>{product.unit_info}</Text>
       </View>
 
       <View style={styles.bottomItemContainer}>
-        <Text style={{ fontWeight: 600, fontSize: 18 }}>{price}</Text>
-        <TouchableOpacity style={styles.addButton} onPress={onAddPress}>
-          <Ionicons
-            name="add"
-            size={18}
-            color="#FFFFFF"
-            style={{ fontWeight: 600 }}
-          />
+        <Text style={{ fontWeight: "600", fontSize: 18 }}>
+          ${product.price}
+        </Text>
+        {/* Nút bấm Add To Cart */}
+        <TouchableOpacity style={styles.addButton} onPress={handleAddToCart}>
+          <Ionicons name="add" size={18} color="#FFFFFF" />
         </TouchableOpacity>
       </View>
     </TouchableOpacity>

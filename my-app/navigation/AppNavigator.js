@@ -9,6 +9,8 @@ import LoginScreen from "../Screens/LoginScreen";
 import SignUpScreen from "../Screens/SignUpScreen";
 import ForgotPasswordScreen from "../Screens/ForgotPasswordScreen";
 import AppStack from "./AppStack";
+import FilterScreen from "../Screens/FilterScreen";
+import ExploreScreen from "../Screens/ExploreScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +31,8 @@ function AppNavigator() {
       <Stack.Screen name="SignUp" component={SignUpScreen} />
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
       <Stack.Screen name="App" component={AppStack} />
+      <Stack.Screen name="ExploreScreen" component={ExploreScreen} />
+      <Stack.Screen name="FilterScreen" component={FilterScreen} />
     </Stack.Navigator>
   );
 }
